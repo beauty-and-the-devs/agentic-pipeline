@@ -2,6 +2,22 @@
 
 AI 에이전트를 구성하고 실행하기 위한 파이프라인을 관리하는 프로젝트입니다.
 
+## environments
+- Ubuntu 24.02 LTS
+- Python 3.12(conda)
+
+### Library
+- requirements.txt 참고
+  ```
+  langgraph>=0.2.0
+  langchain>=0.2.0
+  langchain-core>=0.2.0
+  langchain-openai>=0.2.0
+  pyyaml>=6.0.1
+  python-dotenv>=1.0.1
+  requests>=2.32.0
+  ```
+
 ## 폴더 구조
 
 - `resources/`
@@ -10,7 +26,11 @@ AI 에이전트를 구성하고 실행하기 위한 파이프라인을 관리하
     - 실행 시 필요한 prompt를 이 폴더에서 불러와(agent가 참조할 프롬프트를 로드하여) 각 agent의 task(업무/역할)를 정의합니다.
     - 세 개의 process들이 폴더로 구분되어 있고, 해당하는 프로세스의 각 Agent들의 task가 정의되어 있습니다.
 
+- `src/`
+  - 
+
 ## logs
+- [2026.01.03. Sat] - yonghwan.lee: 전체 파이프라인의 기본 베이스 정의
 - [2026.01.02. Fri] - yonghwan.lee: AI Agent의 resources/prompt 각 prompt 정의
 - [2026.01.02. Fri] - yonghwan.lee: AI Agent의 resources/prompt default files 생성
 
