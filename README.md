@@ -20,6 +20,20 @@ AI 에이전트를 구성하고 실행하기 위한 파이프라인을 관리하
 
 ## 폴더 구조
 
+- `output/`
+  - 파이프라인 실행 결과(산출물/로그)가 저장됩니다.
+  - 기본적으로 실행 시점 기준 run id로 하위 폴더가 생성됩니다. (예: `output/run_20260102_235959/`)
+  - 생성 파일 예시:
+    - `run.log`: 실행 로그
+    - `input_data.json`: 이번 실행에 사용된 입력 데이터 스냅샷
+    - `insight_report.md`
+    - `product_report.md`
+    - `product_review.json`
+    - `plot_report.md`
+    - `marketing_videos.json`
+    - `final_state.json`: 파이프라인 최종 state
+  - `RUN_ID` 환경변수로 폴더명을 고정할 수 있습니다.
+
 - `resources/`
   - `test/`
     - `input_data.json`: 테스트용 더미 입력 데이터(수집 데이터)

@@ -1,0 +1,27 @@
+{
+  "videos": [
+    {
+      "id": "video_1",
+      "concept_name": "루틴 포기러 구제 2단계 듀오",
+      "concept_summary": "복잡한 7단계 루틴 대신 모이스처라이저와 미스트 딱 2개로 끝내는 '글라스 스킨' 루틴을 제안합니다. 실제 사용 장면과 결과물을 선공개하여 숏폼 유저의 이탈을 막고 구매 전환을 유도합니다.",
+      "video_data": "https://ai-video-storage.example.com/shorts_performance/glass_skin_routine_v1.mp4"
+    },
+    {
+      "id": "video_2",
+      "concept_name": "문제-성분 1:1 매칭 세럼 팩",
+      "concept_summary": "트러블(Acne) 고민에 니아신아마이드(Niacinamide) 성분 하나를 매칭하여 메시지를 단순화한 정보 전달형 영상입니다. 복잡한 설명 대신 텍스처와 성분 태그 위주로 구성해 신뢰도를 높였습니다.",
+      "video_data": "https://ai-video-storage.example.com/shorts_performance/acne_serum_solution_v2.mp4"
+    },
+    {
+      "id": "video_3",
+      "concept_name": "실패 없는 듀프 립 스와치 가이드",
+      "concept_summary": "고가 제품과 유사한 발색을 보이는 가성비 립 제품을 톤별 스와치 가이드로 보여줍니다. 구매 결정의 장애물인 '컬러 선택 불안'을 조명 고정 스와치 비교로 해결하여 실구매로 연결합니다.",
+      "video_data": "https://ai-video-storage.example.com/shorts_performance/lip_dupe_swatch_v3.mp4"
+    }
+  ],
+  "common": {
+    "plot_fidelity_checklist": "- PlotText의 핵심 타겟(글라스 스킨/트러블/가성비 메이크업) 3가지 정확히 반영\n- 보고서 기반 데이터(CTR, CVR, CPA 신호)를 대사와 자막의 근거로 활용\n- '보고서 근거 없음' 항목(지속력, 의학적 효과)은 단정하지 않고 확인 필요로 명시\n- 템플릿 A/B/C 구성(루틴형, 성분-문제형, 스와치형) 충실히 이행\n- 명령형 CTA와 프로필 링크 유도 제스처 포함",
+    "conversion_devices": "- 훅(Hook): '2개로 끝', '루틴 실패 이유', '이 가격에 이 컬러' 등 강력한 의문/결과 제시\n- 데모(Demo): 미스트 분사 슬로우 모션, 립 질감 클로즈업 등 감각적 Stop Point 배치\n- 신뢰 요소: 데이터 기반의 상승 프레임(#glassskin, #acne 등) 및 보고서 약신호 언급으로 전문성 부여\n- CTA: 영상 중간과 마지막에 '프로필 링크 확인' 시각적 앵커 및 명령형 텍스트 노출",
+    "ai_naturalness_measures": "- 실촬영 UGC 느낌을 위해 자연광 아래 욕실/거울 셀카 구도 사용\n- 구어체 내레이션(나야 나, ~했거든)과 실제 사용자의 고민이 담긴 자막 톤 적용\n- 과도한 피부 보정 없이 실제 텍스처와 발색이 선명하게 보이도록 연출\n- 자막을 TikTok UI 안전 영역 내에 배치하여 플랫폼 적합성 최적화"
+  }
+}
