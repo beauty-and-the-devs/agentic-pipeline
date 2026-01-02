@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import logging
 from typing import Any, Dict, TypedDict
 
 from langgraph.graph import StateGraph
@@ -11,6 +12,15 @@ from src.agent.MarketingVideoGeneratorAgent import MarketingVideoGeneratorAgent
 from src.agent.PlotGeneratorAgent import PlotGeneratorAgent
 from src.agent.ProductDevelopAgent import ProductDevelopAgent
 from src.agent.ProductReviewAgent import ProductReviewAgent
+
+
+logger = logging.getLogger(__name__)
+
+try:
+    # Optional: pipelines.py can show progress for retry loop if tqdm is installed.
+    from tqdm.auto import tqdm  # type: ignore
+except Exception:  # pragma: no cover
+    tqdm = None  # type: ignore
 
 
 class PipelineState(TypedDict, total=False):
@@ -54,11 +64,15 @@ def build_insight_process_graph() -> "StateGraph[PipelineState]":
 
 
 def run_insight_process(input_json: Dict[str, Any]) -> PipelineState:
+    logger.info("[insight_process] start")
     graph = build_insight_process_graph().compile()
-    return graph.invoke({"input_json": input_json})
+    out = graph.invoke({"input_json": input_json})
+    logger.info("[insight_process] done")
+    return out
 
 
 def run_product_develop(state: PipelineState) -> PipelineState:
+    logger.info("[product_develop] start")
     agent = ProductDevelopAgent()
     # TODO: FormatFileMCP 연동 전까지는 빈 문자열로 둠
     result = agent.run(
@@ -68,26 +82,37 @@ def run_product_develop(state: PipelineState) -> PipelineState:
             "feedback_markdown_optional": state.get("feedback_markdown_optional", ""),
         }
     )
+    logger.info("[product_develop] done")
     return {**state, "product_report_md": result}
 
 
 def run_product_review(state: PipelineState) -> PipelineState:
+    logger.info("[product_review] start")
     agent = ProductReviewAgent()
     result = agent.run(
         {
             "product_develop_report_markdown": state.get("product_report_md", ""),
         }
     )
+    logger.info("[product_review] done")
     return {**state, "product_review_json": result}
 
 
 def run_marketing_contents(state: PipelineState) -> PipelineState:
     # Gate: do not proceed unless product review has passed.
     if state.get("product_review_pass") is not True:
+        logger.error(
+            "[marketing_contents] blocked: product_review_pass=%s reason=%s",
+            state.get("product_review_pass"),
+            state.get("product_review_reason"),
+        )
         raise RuntimeError(
             "Product review did not pass. Fix product_report_md via ProductDevelopAgent feedback loop before marketing."
         )
 
+    logger.info("[marketing_contents] start")
+
+    logger.info("[marketing_contents] plot_generate start")
     plot_agent = PlotGeneratorAgent()
     plot_result = plot_agent.run(
         {
@@ -96,7 +121,9 @@ def run_marketing_contents(state: PipelineState) -> PipelineState:
         }
     )
     state2: PipelineState = {**state, "plot_report_md": plot_result}
+    logger.info("[marketing_contents] plot_generate done")
 
+    logger.info("[marketing_contents] video_generate start")
     video_agent = MarketingVideoGeneratorAgent()
     videos_result = video_agent.run(
         {
@@ -104,6 +131,9 @@ def run_marketing_contents(state: PipelineState) -> PipelineState:
             "PlotText": state2.get("plot_report_md", ""),
         }
     )
+    logger.info("[marketing_contents] video_generate done")
+
+    logger.info("[marketing_contents] done")
     return {**state2, "marketing_videos_json": videos_result}
 
 
@@ -128,14 +158,22 @@ def run_product_develop_with_review(
     If review fails, feed the review reason back into ProductDevelopAgent and retry.
     """
 
+    logger.info("[product_develop_with_review] start max_attempts=%s", max_attempts)
+
     current_state: PipelineState = dict(state)
     feedback = current_state.get("feedback_markdown_optional", "")
 
     attempts = 0
     last_reason = ""
 
-    for _ in range(max_attempts):
+    iterator = range(max_attempts)
+    if tqdm is not None:
+        iterator = tqdm(iterator, desc="product_develop_with_review", unit="attempt")  # type: ignore
+
+    for _ in iterator:
         attempts += 1
+        logger.info("[product_develop_with_review] attempt %s/%s", attempts, max_attempts)
+
         current_state = run_product_develop(
             {**current_state, "feedback_markdown_optional": feedback, "product_develop_attempts": attempts}
         )
@@ -151,11 +189,24 @@ def run_product_develop_with_review(
             "product_review_reason": last_reason,
         }
 
+        logger.info(
+            "[product_develop_with_review] review result pass=%s reason=%s",
+            passed,
+            (last_reason[:200] + "...") if len(last_reason) > 200 else last_reason,
+        )
+
         if passed:
+            logger.info("[product_develop_with_review] done (pass) attempts=%s", attempts)
             return current_state
 
         # Feed back the reviewer reason into ProductDevelopAgent (as markdown)
         feedback = f"# ProductReview Feedback\n\n{last_reason}\n"
+
+    logger.warning(
+        "[product_develop_with_review] done (fail) attempts=%s last_reason=%s",
+        attempts,
+        (last_reason[:200] + "...") if len(last_reason) > 200 else last_reason,
+    )
 
     # Final state with failure info retained
     return {

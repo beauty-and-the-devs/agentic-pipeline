@@ -1,0 +1,38 @@
+2026-01-02 18:53:59,974 | INFO | Logging to /home/ubuntu/agentic-pipeline/output/run_20260102_185359/run.log
+2026-01-02 18:53:59,980 | INFO | run_id=run_20260102_185359 output_dir=/home/ubuntu/agentic-pipeline/output/run_20260102_185359
+2026-01-02 18:53:59,981 | INFO | [1/3] Running insight_process...
+2026-01-02 18:53:59,981 | INFO | [insight_process] start
+2026-01-02 18:54:03,353 | INFO | HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 18:56:36,718 | INFO | HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 18:59:17,878 | INFO | [insight_process] done
+2026-01-02 18:59:17,879 | INFO | insight_process done (317.90s)
+2026-01-02 18:59:17,880 | INFO | [2/3] Running product_develop_with_review...
+2026-01-02 18:59:17,880 | INFO | [product_develop_with_review] start max_attempts=2
+2026-01-02 18:59:17,880 | INFO | [product_develop_with_review] attempt 1/2
+2026-01-02 18:59:17,881 | INFO | [product_develop] start
+2026-01-02 18:59:18,331 | INFO | HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 18:59:18,548 | INFO | [product_develop] done
+2026-01-02 18:59:18,548 | INFO | [product_review] start
+2026-01-02 18:59:20,327 | INFO | HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 18:59:26,564 | INFO | [product_review] done
+2026-01-02 18:59:26,564 | INFO | [product_develop_with_review] review result pass=False reason=1) 구체성: 제품 카테고리, 타깃 사용자, 솔루션 등 핵심 항목 전반 미제시 → 제품 형태, 사용 상황, 제형/용기 등 구체 명사로 정의 필요. 2) 근거: 문제 상황 및 VOC 근거 전무 → 리뷰 키워드, 사용자 불만 빈도 등 정량/정성 데이터 추가 필요. 3) 틱톡커블: 연출 포인트, 훅, CTA 등 모든 요소 누락 → 즉각 변화 장면(예: 버블 생성...
+2026-01-02 18:59:26,565 | INFO | [product_develop_with_review] attempt 2/2
+2026-01-02 18:59:26,565 | INFO | [product_develop] start
+2026-01-02 18:59:26,976 | INFO | HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 18:59:27,593 | INFO | [product_develop] done
+2026-01-02 18:59:27,593 | INFO | [product_review] start
+2026-01-02 18:59:28,016 | INFO | HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 200 OK"
+2026-01-02 18:59:36,501 | INFO | [product_review] done
+2026-01-02 18:59:36,501 | INFO | [product_develop_with_review] review result pass=False reason=1) 구체성: 제품 카테고리, 제형, 용기 등 핵심 개발 항목 전반 부재 → 제품 정의 및 솔루션 상세(예: 에어리스 펌프, 젤-크림 텍스처) 명시 필요. 2) 근거: 문제 진단을 위한 VOC/리뷰 데이터, 페인포인트 근거 전무 → 구체적 사용자 불만(예: 끈적임 40% 언급) 추가 필요. 3) 틱톡커블: 감각적 변화, 훅, CTA 등 숏폼 연출 요소 전부...
+2026-01-02 18:59:36,502 | WARNING | [product_develop_with_review] done (fail) attempts=2 last_reason=1) 구체성: 제품 카테고리, 제형, 용기 등 핵심 개발 항목 전반 부재 → 제품 정의 및 솔루션 상세(예: 에어리스 펌프, 젤-크림 텍스처) 명시 필요. 2) 근거: 문제 진단을 위한 VOC/리뷰 데이터, 페인포인트 근거 전무 → 구체적 사용자 불만(예: 끈적임 40% 언급) 추가 필요. 3) 틱톡커블: 감각적 변화, 훅, CTA 등 숏폼 연출 요소 전부...
+2026-01-02 18:59:36,503 | INFO | product_develop_with_review done (18.62s) pass=False attempts=2
+2026-01-02 18:59:36,503 | INFO | [3/3] Running marketing_contents...
+2026-01-02 18:59:36,503 | ERROR | [marketing_contents] blocked: product_review_pass=False reason=1) 구체성: 제품 카테고리, 제형, 용기 등 핵심 개발 항목 전반 부재 → 제품 정의 및 솔루션 상세(예: 에어리스 펌프, 젤-크림 텍스처) 명시 필요. 2) 근거: 문제 진단을 위한 VOC/리뷰 데이터, 페인포인트 근거 전무 → 구체적 사용자 불만(예: 끈적임 40% 언급) 추가 필요. 3) 틱톡커블: 감각적 변화, 훅, CTA 등 숏폼 연출 요소 전부 누락 → ‘문지르면 버블 생성’, ‘3초 훅 문구’, ‘지금 바로 구매’ CTA 등 구체 제안 필요.
+2026-01-02 18:59:36,503 | ERROR | Pipeline halted with an error
+Traceback (most recent call last):
+  File "/home/ubuntu/agentic-pipeline/src/app.py", line 111, in main
+    state = run_marketing_contents(state)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/agentic-pipeline/src/pipelines.py", line 109, in run_marketing_contents
+    raise RuntimeError(
+RuntimeError: Product review did not pass. Fix product_report_md via ProductDevelopAgent feedback loop before marketing.

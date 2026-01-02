@@ -2,6 +2,14 @@
 
 AI 에이전트를 구성하고 실행하기 위한 파이프라인을 관리하는 프로젝트입니다.
 
+## run
+```bash
+conda activate amore-agent
+cd ./agentic-pipeline
+python3 -m src.app
+
+```
+
 ## environments
 - Ubuntu 24.02 LTS
 - Python 3.12(conda)
@@ -20,7 +28,23 @@ AI 에이전트를 구성하고 실행하기 위한 파이프라인을 관리하
 
 ## 폴더 구조
 
+- `output/`
+  - 파이프라인 실행 결과(산출물/로그)가 저장됩니다.
+  - 기본적으로 실행 시점 기준 run id로 하위 폴더가 생성됩니다. (예: `output/run_20260102_235959/`)
+  - 생성 파일 예시:
+    - `run.log`: 실행 로그
+    - `input_data.json`: 이번 실행에 사용된 입력 데이터 스냅샷
+    - `insight_report.md`
+    - `product_report.md`
+    - `product_review.json`
+    - `plot_report.md`
+    - `marketing_videos.json`
+    - `final_state.json`: 파이프라인 최종 state
+  - `RUN_ID` 환경변수로 폴더명을 고정할 수 있습니다.
+
 - `resources/`
+  - `test/`
+    - `input_data.json`: 테스트용 더미 입력 데이터(수집 데이터)
   - `prompt/`
     - 각 agent의 Prompt(프롬프트)들이 저장되어 있습니다.
     - 실행 시 필요한 prompt를 이 폴더에서 불러와(agent가 참조할 프롬프트를 로드하여) 각 agent의 task(업무/역할)를 정의합니다.
@@ -47,6 +71,7 @@ AI 에이전트를 구성하고 실행하기 위한 파이프라인을 관리하
   - 간단한 호출/연동 테스트가 위치합니다.
 
 ## logs
+- [2026.01.03. Sat] - yonghwan.lee: 전체 파이프라인의 기본 베이스 테스트
 - [2026.01.03. Sat] - yonghwan.lee: 전체 파이프라인의 기본 베이스 정의
 - [2026.01.02. Fri] - yonghwan.lee: AI Agent의 resources/prompt 각 prompt 정의
 - [2026.01.02. Fri] - yonghwan.lee: AI Agent의 resources/prompt default files 생성

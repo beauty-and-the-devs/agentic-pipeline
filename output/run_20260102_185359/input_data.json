@@ -1,0 +1,603 @@
+{
+  "meta": {
+    "collected_at": "2025-01-02T06:00:00Z",
+    "batch_id": "batch_20250102_0600",
+    "data_sources": {
+      "tiktok_creative_center": {
+        "endpoint": "https://ads.tiktok.com/business/creativecenter",
+        "data_types": [
+          "top_products",
+          "keyword_insights"
+        ]
+      },
+      "scrapecreators_api": {
+        "endpoints": [
+          "/v1/tiktok/shop/search",
+          "/v1/tiktok/shop/products",
+          "/v1/tiktok/product"
+        ]
+      }
+    },
+    "region": "US",
+    "period": "last_7_days",
+    "category": {
+      "id": "601450",
+      "name": "Beauty & Personal Care"
+    }
+  },
+  "market_trends": {
+    "source": "TikTok Creative Center",
+    "collected_at": "2025-01-02T06:00:00Z",
+    "top_products": [
+      {
+        "product_name": "Perfume",
+        "category": "Beauty & Personal Care/Makeup & Perfume",
+        "metrics": {
+          "post_count": 24600,
+          "likes": 436000,
+          "shares": 6600,
+          "comments": 6800,
+          "impressions": 262000000,
+          "ctr_percent": 1.35,
+          "cvr_percent": 8.21,
+          "cpa_usd": 4.66
+        }
+      },
+      {
+        "product_name": "Lipstick & Lip Gloss",
+        "category": "Beauty & Personal Care/Makeup & Perfume",
+        "metrics": {
+          "post_count": 15200,
+          "likes": 203000,
+          "shares": 2500,
+          "comments": 2200,
+          "impressions": 62600000,
+          "ctr_percent": 4.08,
+          "cvr_percent": 6.16,
+          "cpa_usd": 2.28
+        }
+      },
+      {
+        "product_name": "Shampoo & Conditioner",
+        "category": "Beauty & Personal Care/Hair Care",
+        "metrics": {
+          "post_count": 13200,
+          "likes": 273000,
+          "shares": 6300,
+          "comments": 4500,
+          "impressions": 111000000,
+          "ctr_percent": 2.14,
+          "cvr_percent": 12.9,
+          "cpa_usd": 1.23
+        }
+      },
+      {
+        "product_name": "Serums & Essences",
+        "category": "Beauty & Personal Care/Skincare",
+        "metrics": {
+          "post_count": 12700,
+          "likes": 189000,
+          "shares": 3200,
+          "comments": 4200,
+          "impressions": 82700000,
+          "ctr_percent": 1.81,
+          "cvr_percent": 5.17,
+          "cpa_usd": 5.76
+        }
+      },
+      {
+        "product_name": "Moisturisers & Mists",
+        "category": "Beauty & Personal Care/Skincare",
+        "metrics": {
+          "post_count": 9900,
+          "likes": 128000,
+          "shares": 2400,
+          "comments": 3000,
+          "impressions": 71500000,
+          "ctr_percent": 2.43,
+          "cvr_percent": 12.59,
+          "cpa_usd": 1.06
+        }
+      }
+    ],
+    "trending_keywords": [
+      {
+        "keyword": "skincare routine",
+        "popularity": 89000,
+        "change_percent": 115.2,
+        "ctr_percent": 3.45,
+        "cvr_percent": 7.8,
+        "cpa_usd": 2.15
+      },
+      {
+        "keyword": "glass skin",
+        "popularity": 67000,
+        "change_percent": 142.8,
+        "ctr_percent": 4.12,
+        "cvr_percent": 9.2,
+        "cpa_usd": 1.89
+      },
+      {
+        "keyword": "lip gloss",
+        "popularity": 54000,
+        "change_percent": 98.5,
+        "ctr_percent": 5.67,
+        "cvr_percent": 11.3,
+        "cpa_usd": 1.45
+      },
+      {
+        "keyword": "vitamin c serum",
+        "popularity": 48000,
+        "change_percent": 87.3,
+        "ctr_percent": 3.89,
+        "cvr_percent": 8.6,
+        "cpa_usd": 3.21
+      },
+      {
+        "keyword": "affordable makeup",
+        "popularity": 42000,
+        "change_percent": 125.6,
+        "ctr_percent": 6.23,
+        "cvr_percent": 14.2,
+        "cpa_usd": 0.98
+      }
+    ]
+  },
+  "tiktok_shop_products": {
+    "source": "ScrapCreators API - /shop/search",
+    "search_query": "skincare",
+    "total_products": 100,
+    "products": [
+      {
+        "product_id": "1729527313880355335",
+        "title": "Goli Ashwagandha & Vitamin D Gummy - Mixed Berry, KSM-66, Vegan, Plant Based, Non-GMO",
+        "image_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/30fc1338a2bf474a9d252a790e4c119f~tplv-fhlh96nyum-crop-webp:1500:1500.webp",
+        "price": {
+          "currency": "USD",
+          "sale_price": 14.96,
+          "original_price": 24.99,
+          "discount_percent": 40
+        },
+        "rating": {
+          "score": 4.5,
+          "review_count": 91316
+        },
+        "sold_count": 1235089,
+        "seller": {
+          "seller_id": "7495794203056835079",
+          "shop_name": "Goli Nutrition",
+          "shop_logo_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/e7478d3e93d4487a9e772fa74e10f506~tplv-fhlh96nyum-resize-png:300:300.png"
+        },
+        "canonical_url": "https://www.tiktok.com/shop/pdp/ashwagandha-gummies-by-goli-ksm-66-mixed-berry-vegan-non-gmo/1729527313880355335"
+      },
+      {
+        "product_id": "1730383241618035288",
+        "title": "Manspot Electric Body Hair Razor for Men - USB Rechargeable, Waterproof",
+        "image_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/23a77319ea594151b3730747704a62bc~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg",
+        "price": {
+          "currency": "USD",
+          "sale_price": 21.19,
+          "original_price": 39.99,
+          "discount_percent": 47
+        },
+        "rating": {
+          "score": 4.3,
+          "review_count": 595
+        },
+        "sold_count": 7160,
+        "seller": {
+          "seller_id": "7496021452055022168",
+          "shop_name": "Manspot",
+          "shop_logo_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc~tplv-fhlh96nyum-resize-png:300:300.png"
+        },
+        "canonical_url": "https://www.tiktok.com/shop/pdp/manspot-electric-body-hair-razor/1730383241618035288"
+      },
+      {
+        "product_id": "1730456789012345678",
+        "title": "CeraVe Hydrating Facial Cleanser for Normal to Dry Skin 16oz",
+        "image_url": "https://example.com/cerave_cleanser.webp",
+        "price": {
+          "currency": "USD",
+          "sale_price": 15.99,
+          "original_price": 18.99,
+          "discount_percent": 16
+        },
+        "rating": {
+          "score": 4.8,
+          "review_count": 45230
+        },
+        "sold_count": 328450,
+        "seller": {
+          "seller_id": "7495832567110863807",
+          "shop_name": "CeraVe Official",
+          "shop_logo_url": "https://example.com/cerave_logo.png"
+        },
+        "canonical_url": "https://www.tiktok.com/shop/pdp/cerave-hydrating-cleanser/1730456789012345678"
+      },
+      {
+        "product_id": "1730567890123456789",
+        "title": "The Ordinary Niacinamide 10% + Zinc 1% Serum 30ml",
+        "image_url": "https://example.com/ordinary_niacinamide.webp",
+        "price": {
+          "currency": "USD",
+          "sale_price": 6.5,
+          "original_price": 6.5,
+          "discount_percent": 0
+        },
+        "rating": {
+          "score": 4.6,
+          "review_count": 78450
+        },
+        "sold_count": 567890,
+        "seller": {
+          "seller_id": "7495943678221974918",
+          "shop_name": "The Ordinary",
+          "shop_logo_url": "https://example.com/ordinary_logo.png"
+        },
+        "canonical_url": "https://www.tiktok.com/shop/pdp/the-ordinary-niacinamide/1730567890123456789"
+      },
+      {
+        "product_id": "1730678901234567890",
+        "title": "e.l.f. Halo Glow Liquid Filter - Fair/Light",
+        "image_url": "https://example.com/elf_halo_glow.webp",
+        "price": {
+          "currency": "USD",
+          "sale_price": 14.0,
+          "original_price": 14.0,
+          "discount_percent": 0
+        },
+        "rating": {
+          "score": 4.4,
+          "review_count": 32100
+        },
+        "sold_count": 245670,
+        "seller": {
+          "seller_id": "7496054789332085029",
+          "shop_name": "e.l.f. Cosmetics",
+          "shop_logo_url": "https://example.com/elf_logo.png"
+        },
+        "canonical_url": "https://www.tiktok.com/shop/pdp/elf-halo-glow-liquid-filter/1730678901234567890"
+      }
+    ]
+  },
+  "product_details": {
+    "source": "ScrapCreators API - /product",
+    "items": [
+      {
+        "product_id": "1730383241618035288",
+        "categories": [
+          {
+            "category_id": "601450",
+            "level": 1,
+            "category_name": "Beauty & Personal Care"
+          }
+        ],
+        "product_info": {
+          "title": "Manspot Electric Body Hair Razor for Men - USB Rechargeable, Waterproof, Replaceable Ceramic Heads",
+          "description_video": {
+            "video_id": "v12d52gd0030ctp3lknog65q8llkgcng",
+            "duration_seconds": 45.12,
+            "video_url": "https://v16m-default.tiktokcdn-us.com/video.mp4"
+          },
+          "images": [
+            {
+              "url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/23a77319ea594151b3730747704a62bc~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg",
+              "width": 800,
+              "height": 800
+            }
+          ],
+          "sold_count": 7160,
+          "price": {
+            "sale_price": 21.19,
+            "original_price": 39.99,
+            "discount_percent": 47,
+            "currency": "USD"
+          },
+          "variants": [
+            {
+              "sku_id": "1730384306561520216",
+              "prop_name": "Color",
+              "prop_value": "Black",
+              "stock": 1824,
+              "purchase_limit": 20
+            }
+          ]
+        },
+        "reviews": {
+          "product_rating": 4.3,
+          "review_count": 595,
+          "sample_reviews": [
+            {
+              "review_id": "7516224145770006315",
+              "rating": 5,
+              "text": "Great product. Good shipping. Exactly as described. Does not nick. Holds charge for a long time. Light weight. Waterproof even used in the shower.",
+              "timestamp": "2025-06-15",
+              "user_name": "thedustinppeterson",
+              "sku_specification": "Item: Blue",
+              "review_source": "Purchased on TikTok"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "sellers": {
+    "source": "ScrapCreators API - /shop/products",
+    "items": [
+      {
+        "seller_id": "7495794203056835079",
+        "shop_name": "Goli Nutrition",
+        "shop_logo_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/e7478d3e93d4487a9e772fa74e10f506~tplv-fhlh96nyum-resize-webp:300:300.webp",
+        "shop_rating": 4.6,
+        "shop_link": "https://www.tiktok.com/shop/store/goli-nutrition/7495794203056835079",
+        "region": "US",
+        "shop_slogan": "Health Simple. Vegan. Gluten-Free. Non-GMO.",
+        "metrics": {
+          "total_sold_count": 3767605,
+          "formatted_sold_count": "3.7M",
+          "on_sell_product_count": 36,
+          "review_count": 284185,
+          "followers_count": 237879,
+          "formatted_followers_count": "237.8K+",
+          "video_count": 2413
+        },
+        "store_scores": {
+          "response_rate": {
+            "score_percent": 100,
+            "type": "replies_in_24h"
+          },
+          "ship_on_time": {
+            "score_percent": 50,
+            "type": "ships_in_48h"
+          },
+          "positive_feedback": {
+            "score_percent": 89,
+            "type": "positive_feedback"
+          }
+        }
+      },
+      {
+        "seller_id": "7496021452055022168",
+        "shop_name": "Manspot",
+        "shop_logo_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc~tplv-fhlh96nyum-resize-webp:300:300.webp",
+        "shop_rating": 4.4,
+        "shop_link": "https://www.tiktok.com/shop/store/manspot/7496021452055022168",
+        "region": "US",
+        "shop_slogan": null,
+        "shop_identity": "OFFICIAL SHOP",
+        "metrics": {
+          "total_sold_count": 50887,
+          "formatted_sold_count": "50.8K+",
+          "on_sell_product_count": 14,
+          "review_count": 4215,
+          "followers_count": 1796,
+          "formatted_followers_count": "1.7K+",
+          "video_count": 100
+        },
+        "store_scores": {
+          "response_rate": {
+            "score_percent": 98,
+            "type": "replies_in_24h"
+          },
+          "ship_on_time": {
+            "score_percent": 97,
+            "type": "ships_in_48h"
+          },
+          "positive_feedback": {
+            "score_percent": 84,
+            "type": "positive_feedback"
+          }
+        }
+      },
+      {
+        "seller_id": "7495832567110863807",
+        "shop_name": "CeraVe Official",
+        "shop_logo_url": "https://example.com/cerave_logo.png",
+        "shop_rating": 4.9,
+        "shop_link": "https://www.tiktok.com/shop/store/cerave-official/7495832567110863807",
+        "region": "US",
+        "shop_slogan": "Developed with Dermatologists",
+        "shop_identity": "OFFICIAL SHOP",
+        "metrics": {
+          "total_sold_count": 2890000,
+          "formatted_sold_count": "2.8M",
+          "on_sell_product_count": 45,
+          "review_count": 456000,
+          "followers_count": 890000,
+          "formatted_followers_count": "890K+",
+          "video_count": 1245
+        },
+        "store_scores": {
+          "response_rate": {
+            "score_percent": 99,
+            "type": "replies_in_24h"
+          },
+          "ship_on_time": {
+            "score_percent": 96,
+            "type": "ships_in_48h"
+          },
+          "positive_feedback": {
+            "score_percent": 97,
+            "type": "positive_feedback"
+          }
+        }
+      }
+    ]
+  },
+  "related_videos": {
+    "source": "ScrapCreators API - /product (related_videos)",
+    "items": [
+      {
+        "video_id": "7527142083258305822",
+        "product_id": "1730383241618035288",
+        "video_info": {
+          "duration_ms": 57900,
+          "upload_timestamp": "1752549352",
+          "title": "#clippers #manspot #balltrimmerformen #cleanshave #intimatetrimmer",
+          "cover_image_url": "https://p19-pu-sign-useast8.tiktokcdn-us.com/cover.jpeg",
+          "video_url": "https://www.tiktok.com/@6680168318781539334/video/7527142083258305822"
+        },
+        "metrics": {
+          "play_count": 324944,
+          "like_count": 1812
+        },
+        "creator": {
+          "author_id": "6680168318781539334",
+          "author_name": "Brittney",
+          "author_avatar_url": "https://p16-pu-sign-useast8.tiktokcdn-us.com/avatar.webp",
+          "author_url": "https://www.tiktok.com/@6680168318781539334"
+        },
+        "ad_label": "Commission paid"
+      },
+      {
+        "video_id": "7528901234567890123",
+        "product_id": "1730456789012345678",
+        "video_info": {
+          "duration_ms": 45000,
+          "upload_timestamp": "1752635752",
+          "title": "#skincare #cerave #cleanser #morningroutine #glassskin",
+          "cover_image_url": "https://example.com/cover2.jpeg",
+          "video_url": "https://www.tiktok.com/@skincarebyanna/video/7528901234567890123"
+        },
+        "metrics": {
+          "play_count": 1250000,
+          "like_count": 89000
+        },
+        "creator": {
+          "author_id": "7012345678901234567",
+          "author_name": "SkinCareByAnna",
+          "author_avatar_url": "https://example.com/anna_avatar.webp",
+          "author_url": "https://www.tiktok.com/@skincarebyanna"
+        },
+        "ad_label": "Commission paid"
+      },
+      {
+        "video_id": "7529012345678901234",
+        "product_id": "1730567890123456789",
+        "video_info": {
+          "duration_ms": 32000,
+          "upload_timestamp": "1752722152",
+          "title": "#theordinary #niacinamide #affordableskincare #skintok #acne",
+          "cover_image_url": "https://example.com/cover3.jpeg",
+          "video_url": "https://www.tiktok.com/@derminfluencer/video/7529012345678901234"
+        },
+        "metrics": {
+          "play_count": 2450000,
+          "like_count": 156000
+        },
+        "creator": {
+          "author_id": "7023456789012345678",
+          "author_name": "DermInfluencer",
+          "author_avatar_url": "https://example.com/derm_avatar.webp",
+          "author_url": "https://www.tiktok.com/@derminfluencer"
+        },
+        "ad_label": null
+      },
+      {
+        "video_id": "7529123456789012345",
+        "product_id": "1730678901234567890",
+        "video_info": {
+          "duration_ms": 28000,
+          "upload_timestamp": "1752808552",
+          "title": "#elfcosmetics #haloglow #makeupdupes #drugstoremakeup #grwm",
+          "cover_image_url": "https://example.com/cover4.jpeg",
+          "video_url": "https://www.tiktok.com/@makeupbymia/video/7529123456789012345"
+        },
+        "metrics": {
+          "play_count": 890000,
+          "like_count": 67000
+        },
+        "creator": {
+          "author_id": "7034567890123456789",
+          "author_name": "MakeupByMia",
+          "author_avatar_url": "https://example.com/mia_avatar.webp",
+          "author_url": "https://www.tiktok.com/@makeupbymia"
+        },
+        "ad_label": "Commission paid"
+      }
+    ]
+  },
+  "influencer_meta": {
+    "source": "Derived from related_videos + seller data",
+    "note": "인플루언서 상세 정보는 별도 API 호출 필요 (현재는 related_videos에서 추출 가능한 정보만)",
+    "creators": [
+      {
+        "creator_id": "6680168318781539334",
+        "handle": "@brittney_reviews",
+        "name": "Brittney",
+        "avatar_url": "https://p16-pu-sign-useast8.tiktokcdn-us.com/avatar.webp",
+        "profile_url": "https://www.tiktok.com/@6680168318781539334",
+        "content_metrics": {
+          "total_videos_in_dataset": 1,
+          "total_views": 324944,
+          "total_likes": 1812,
+          "avg_engagement_rate_percent": 0.56
+        },
+        "categories": [
+          "Beauty",
+          "Personal Care",
+          "Men's Grooming"
+        ],
+        "affiliate_status": "Commission paid"
+      },
+      {
+        "creator_id": "7012345678901234567",
+        "handle": "@skincarebyanna",
+        "name": "SkinCareByAnna",
+        "avatar_url": "https://example.com/anna_avatar.webp",
+        "profile_url": "https://www.tiktok.com/@skincarebyanna",
+        "content_metrics": {
+          "total_videos_in_dataset": 1,
+          "total_views": 1250000,
+          "total_likes": 89000,
+          "avg_engagement_rate_percent": 7.12
+        },
+        "categories": [
+          "Skincare",
+          "Beauty Routine",
+          "Glass Skin"
+        ],
+        "affiliate_status": "Commission paid"
+      },
+      {
+        "creator_id": "7023456789012345678",
+        "handle": "@derminfluencer",
+        "name": "DermInfluencer",
+        "avatar_url": "https://example.com/derm_avatar.webp",
+        "profile_url": "https://www.tiktok.com/@derminfluencer",
+        "content_metrics": {
+          "total_videos_in_dataset": 1,
+          "total_views": 2450000,
+          "total_likes": 156000,
+          "avg_engagement_rate_percent": 6.37
+        },
+        "categories": [
+          "Skincare",
+          "Acne",
+          "Affordable Beauty"
+        ],
+        "affiliate_status": "Organic"
+      },
+      {
+        "creator_id": "7034567890123456789",
+        "handle": "@makeupbymia",
+        "name": "MakeupByMia",
+        "avatar_url": "https://example.com/mia_avatar.webp",
+        "profile_url": "https://www.tiktok.com/@makeupbymia",
+        "content_metrics": {
+          "total_videos_in_dataset": 1,
+          "total_views": 890000,
+          "total_likes": 67000,
+          "avg_engagement_rate_percent": 7.53
+        },
+        "categories": [
+          "Makeup",
+          "Drugstore Beauty",
+          "GRWM"
+        ],
+        "affiliate_status": "Commission paid"
+      }
+    ]
+  },
+  "user_uploaded_pdf": null
+}
