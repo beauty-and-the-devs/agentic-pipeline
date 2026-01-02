@@ -85,31 +85,39 @@ def main() -> None:
         t0 = time.time()
         logging.info("run_id=%s output_dir=%s", run_id, out_dir)
 
-        logging.info("[1/3] Running insight_process...")
-        state = run_insight_process(input_json)
-        save_step_output(out_dir, "insight_process", state)
-        pbar.update(1)
-        logging.info("insight_process done (%.2fs)", time.time() - t0)
+        try:
+            logging.info("[1/3] Running insight_process...")
+            state = run_insight_process(input_json)
+            save_step_output(out_dir, "insight_process", state)
+            pbar.update(1)
+            logging.info("insight_process done (%.2fs)", time.time() - t0)
 
-        t1 = time.time()
-        logging.info("[2/3] Running product_develop_with_review...")
-        state = run_product_develop_with_review(state, max_attempts=2)
-        save_step_output(out_dir, "product_develop", state)
-        save_step_output(out_dir, "product_review", state)
-        pbar.update(1)
-        logging.info(
-            "product_develop_with_review done (%.2fs) pass=%s attempts=%s",
-            time.time() - t1,
-            state.get("product_review_pass"),
-            state.get("product_develop_attempts"),
-        )
+            t1 = time.time()
+            logging.info("[2/3] Running product_develop_with_review...")
+            state = run_product_develop_with_review(state, max_attempts=2)
+            # Always persist product outputs, even if review ultimately fails.
+            save_step_output(out_dir, "product_develop", state)
+            save_step_output(out_dir, "product_review", state)
+            pbar.update(1)
+            logging.info(
+                "product_develop_with_review done (%.2fs) pass=%s attempts=%s",
+                time.time() - t1,
+                state.get("product_review_pass"),
+                state.get("product_develop_attempts"),
+            )
 
-        t2 = time.time()
-        logging.info("[3/3] Running marketing_contents...")
-        state = run_marketing_contents(state)
-        save_step_output(out_dir, "marketing_contents", state)
-        pbar.update(1)
-        logging.info("marketing_contents done (%.2fs)", time.time() - t2)
+            t2 = time.time()
+            logging.info("[3/3] Running marketing_contents...")
+            state = run_marketing_contents(state)
+            save_step_output(out_dir, "marketing_contents", state)
+            pbar.update(1)
+            logging.info("marketing_contents done (%.2fs)", time.time() - t2)
+        except Exception:
+            # Ensure we still save the latest state (and any artifacts already produced)
+            # even when the pipeline halts (e.g., marketing gate failure).
+            logging.exception("Pipeline halted with an error")
+            save_pipeline_state(out_dir, state)
+            raise
 
     logging.info("Pipeline finished (%.2fs total)", time.time() - t0)
 

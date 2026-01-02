@@ -1,0 +1,1 @@
+입력 근거 부족(추가 정보 필요) — FORMATFILE_MCP_MARKDOWN, INSIGHT_REPORT_MARKDOWN, FEEDBACK_MARKDOWN이 모두 제공되지 않아 제품 개발 보고서를 생성할 수 없습니다.

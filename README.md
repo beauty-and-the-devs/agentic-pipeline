@@ -2,6 +2,14 @@
 
 AI 에이전트를 구성하고 실행하기 위한 파이프라인을 관리하는 프로젝트입니다.
 
+## run
+```bash
+conda activate amore-agent
+cd ./agentic-pipeline
+python3 -m src.app
+
+```
+
 ## environments
 - Ubuntu 24.02 LTS
 - Python 3.12(conda)

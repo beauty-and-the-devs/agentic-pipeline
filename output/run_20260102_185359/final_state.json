@@ -1,0 +1,612 @@
+{
+  "input_json": {
+    "meta": {
+      "collected_at": "2025-01-02T06:00:00Z",
+      "batch_id": "batch_20250102_0600",
+      "data_sources": {
+        "tiktok_creative_center": {
+          "endpoint": "https://ads.tiktok.com/business/creativecenter",
+          "data_types": [
+            "top_products",
+            "keyword_insights"
+          ]
+        },
+        "scrapecreators_api": {
+          "endpoints": [
+            "/v1/tiktok/shop/search",
+            "/v1/tiktok/shop/products",
+            "/v1/tiktok/product"
+          ]
+        }
+      },
+      "region": "US",
+      "period": "last_7_days",
+      "category": {
+        "id": "601450",
+        "name": "Beauty & Personal Care"
+      }
+    },
+    "market_trends": {
+      "source": "TikTok Creative Center",
+      "collected_at": "2025-01-02T06:00:00Z",
+      "top_products": [
+        {
+          "product_name": "Perfume",
+          "category": "Beauty & Personal Care/Makeup & Perfume",
+          "metrics": {
+            "post_count": 24600,
+            "likes": 436000,
+            "shares": 6600,
+            "comments": 6800,
+            "impressions": 262000000,
+            "ctr_percent": 1.35,
+            "cvr_percent": 8.21,
+            "cpa_usd": 4.66
+          }
+        },
+        {
+          "product_name": "Lipstick & Lip Gloss",
+          "category": "Beauty & Personal Care/Makeup & Perfume",
+          "metrics": {
+            "post_count": 15200,
+            "likes": 203000,
+            "shares": 2500,
+            "comments": 2200,
+            "impressions": 62600000,
+            "ctr_percent": 4.08,
+            "cvr_percent": 6.16,
+            "cpa_usd": 2.28
+          }
+        },
+        {
+          "product_name": "Shampoo & Conditioner",
+          "category": "Beauty & Personal Care/Hair Care",
+          "metrics": {
+            "post_count": 13200,
+            "likes": 273000,
+            "shares": 6300,
+            "comments": 4500,
+            "impressions": 111000000,
+            "ctr_percent": 2.14,
+            "cvr_percent": 12.9,
+            "cpa_usd": 1.23
+          }
+        },
+        {
+          "product_name": "Serums & Essences",
+          "category": "Beauty & Personal Care/Skincare",
+          "metrics": {
+            "post_count": 12700,
+            "likes": 189000,
+            "shares": 3200,
+            "comments": 4200,
+            "impressions": 82700000,
+            "ctr_percent": 1.81,
+            "cvr_percent": 5.17,
+            "cpa_usd": 5.76
+          }
+        },
+        {
+          "product_name": "Moisturisers & Mists",
+          "category": "Beauty & Personal Care/Skincare",
+          "metrics": {
+            "post_count": 9900,
+            "likes": 128000,
+            "shares": 2400,
+            "comments": 3000,
+            "impressions": 71500000,
+            "ctr_percent": 2.43,
+            "cvr_percent": 12.59,
+            "cpa_usd": 1.06
+          }
+        }
+      ],
+      "trending_keywords": [
+        {
+          "keyword": "skincare routine",
+          "popularity": 89000,
+          "change_percent": 115.2,
+          "ctr_percent": 3.45,
+          "cvr_percent": 7.8,
+          "cpa_usd": 2.15
+        },
+        {
+          "keyword": "glass skin",
+          "popularity": 67000,
+          "change_percent": 142.8,
+          "ctr_percent": 4.12,
+          "cvr_percent": 9.2,
+          "cpa_usd": 1.89
+        },
+        {
+          "keyword": "lip gloss",
+          "popularity": 54000,
+          "change_percent": 98.5,
+          "ctr_percent": 5.67,
+          "cvr_percent": 11.3,
+          "cpa_usd": 1.45
+        },
+        {
+          "keyword": "vitamin c serum",
+          "popularity": 48000,
+          "change_percent": 87.3,
+          "ctr_percent": 3.89,
+          "cvr_percent": 8.6,
+          "cpa_usd": 3.21
+        },
+        {
+          "keyword": "affordable makeup",
+          "popularity": 42000,
+          "change_percent": 125.6,
+          "ctr_percent": 6.23,
+          "cvr_percent": 14.2,
+          "cpa_usd": 0.98
+        }
+      ]
+    },
+    "tiktok_shop_products": {
+      "source": "ScrapCreators API - /shop/search",
+      "search_query": "skincare",
+      "total_products": 100,
+      "products": [
+        {
+          "product_id": "1729527313880355335",
+          "title": "Goli Ashwagandha & Vitamin D Gummy - Mixed Berry, KSM-66, Vegan, Plant Based, Non-GMO",
+          "image_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/30fc1338a2bf474a9d252a790e4c119f~tplv-fhlh96nyum-crop-webp:1500:1500.webp",
+          "price": {
+            "currency": "USD",
+            "sale_price": 14.96,
+            "original_price": 24.99,
+            "discount_percent": 40
+          },
+          "rating": {
+            "score": 4.5,
+            "review_count": 91316
+          },
+          "sold_count": 1235089,
+          "seller": {
+            "seller_id": "7495794203056835079",
+            "shop_name": "Goli Nutrition",
+            "shop_logo_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/e7478d3e93d4487a9e772fa74e10f506~tplv-fhlh96nyum-resize-png:300:300.png"
+          },
+          "canonical_url": "https://www.tiktok.com/shop/pdp/ashwagandha-gummies-by-goli-ksm-66-mixed-berry-vegan-non-gmo/1729527313880355335"
+        },
+        {
+          "product_id": "1730383241618035288",
+          "title": "Manspot Electric Body Hair Razor for Men - USB Rechargeable, Waterproof",
+          "image_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/23a77319ea594151b3730747704a62bc~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg",
+          "price": {
+            "currency": "USD",
+            "sale_price": 21.19,
+            "original_price": 39.99,
+            "discount_percent": 47
+          },
+          "rating": {
+            "score": 4.3,
+            "review_count": 595
+          },
+          "sold_count": 7160,
+          "seller": {
+            "seller_id": "7496021452055022168",
+            "shop_name": "Manspot",
+            "shop_logo_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc~tplv-fhlh96nyum-resize-png:300:300.png"
+          },
+          "canonical_url": "https://www.tiktok.com/shop/pdp/manspot-electric-body-hair-razor/1730383241618035288"
+        },
+        {
+          "product_id": "1730456789012345678",
+          "title": "CeraVe Hydrating Facial Cleanser for Normal to Dry Skin 16oz",
+          "image_url": "https://example.com/cerave_cleanser.webp",
+          "price": {
+            "currency": "USD",
+            "sale_price": 15.99,
+            "original_price": 18.99,
+            "discount_percent": 16
+          },
+          "rating": {
+            "score": 4.8,
+            "review_count": 45230
+          },
+          "sold_count": 328450,
+          "seller": {
+            "seller_id": "7495832567110863807",
+            "shop_name": "CeraVe Official",
+            "shop_logo_url": "https://example.com/cerave_logo.png"
+          },
+          "canonical_url": "https://www.tiktok.com/shop/pdp/cerave-hydrating-cleanser/1730456789012345678"
+        },
+        {
+          "product_id": "1730567890123456789",
+          "title": "The Ordinary Niacinamide 10% + Zinc 1% Serum 30ml",
+          "image_url": "https://example.com/ordinary_niacinamide.webp",
+          "price": {
+            "currency": "USD",
+            "sale_price": 6.5,
+            "original_price": 6.5,
+            "discount_percent": 0
+          },
+          "rating": {
+            "score": 4.6,
+            "review_count": 78450
+          },
+          "sold_count": 567890,
+          "seller": {
+            "seller_id": "7495943678221974918",
+            "shop_name": "The Ordinary",
+            "shop_logo_url": "https://example.com/ordinary_logo.png"
+          },
+          "canonical_url": "https://www.tiktok.com/shop/pdp/the-ordinary-niacinamide/1730567890123456789"
+        },
+        {
+          "product_id": "1730678901234567890",
+          "title": "e.l.f. Halo Glow Liquid Filter - Fair/Light",
+          "image_url": "https://example.com/elf_halo_glow.webp",
+          "price": {
+            "currency": "USD",
+            "sale_price": 14.0,
+            "original_price": 14.0,
+            "discount_percent": 0
+          },
+          "rating": {
+            "score": 4.4,
+            "review_count": 32100
+          },
+          "sold_count": 245670,
+          "seller": {
+            "seller_id": "7496054789332085029",
+            "shop_name": "e.l.f. Cosmetics",
+            "shop_logo_url": "https://example.com/elf_logo.png"
+          },
+          "canonical_url": "https://www.tiktok.com/shop/pdp/elf-halo-glow-liquid-filter/1730678901234567890"
+        }
+      ]
+    },
+    "product_details": {
+      "source": "ScrapCreators API - /product",
+      "items": [
+        {
+          "product_id": "1730383241618035288",
+          "categories": [
+            {
+              "category_id": "601450",
+              "level": 1,
+              "category_name": "Beauty & Personal Care"
+            }
+          ],
+          "product_info": {
+            "title": "Manspot Electric Body Hair Razor for Men - USB Rechargeable, Waterproof, Replaceable Ceramic Heads",
+            "description_video": {
+              "video_id": "v12d52gd0030ctp3lknog65q8llkgcng",
+              "duration_seconds": 45.12,
+              "video_url": "https://v16m-default.tiktokcdn-us.com/video.mp4"
+            },
+            "images": [
+              {
+                "url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/23a77319ea594151b3730747704a62bc~tplv-fhlh96nyum-resize-jpeg:800:800.jpeg",
+                "width": 800,
+                "height": 800
+              }
+            ],
+            "sold_count": 7160,
+            "price": {
+              "sale_price": 21.19,
+              "original_price": 39.99,
+              "discount_percent": 47,
+              "currency": "USD"
+            },
+            "variants": [
+              {
+                "sku_id": "1730384306561520216",
+                "prop_name": "Color",
+                "prop_value": "Black",
+                "stock": 1824,
+                "purchase_limit": 20
+              }
+            ]
+          },
+          "reviews": {
+            "product_rating": 4.3,
+            "review_count": 595,
+            "sample_reviews": [
+              {
+                "review_id": "7516224145770006315",
+                "rating": 5,
+                "text": "Great product. Good shipping. Exactly as described. Does not nick. Holds charge for a long time. Light weight. Waterproof even used in the shower.",
+                "timestamp": "2025-06-15",
+                "user_name": "thedustinppeterson",
+                "sku_specification": "Item: Blue",
+                "review_source": "Purchased on TikTok"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "sellers": {
+      "source": "ScrapCreators API - /shop/products",
+      "items": [
+        {
+          "seller_id": "7495794203056835079",
+          "shop_name": "Goli Nutrition",
+          "shop_logo_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/e7478d3e93d4487a9e772fa74e10f506~tplv-fhlh96nyum-resize-webp:300:300.webp",
+          "shop_rating": 4.6,
+          "shop_link": "https://www.tiktok.com/shop/store/goli-nutrition/7495794203056835079",
+          "region": "US",
+          "shop_slogan": "Health Simple. Vegan. Gluten-Free. Non-GMO.",
+          "metrics": {
+            "total_sold_count": 3767605,
+            "formatted_sold_count": "3.7M",
+            "on_sell_product_count": 36,
+            "review_count": 284185,
+            "followers_count": 237879,
+            "formatted_followers_count": "237.8K+",
+            "video_count": 2413
+          },
+          "store_scores": {
+            "response_rate": {
+              "score_percent": 100,
+              "type": "replies_in_24h"
+            },
+            "ship_on_time": {
+              "score_percent": 50,
+              "type": "ships_in_48h"
+            },
+            "positive_feedback": {
+              "score_percent": 89,
+              "type": "positive_feedback"
+            }
+          }
+        },
+        {
+          "seller_id": "7496021452055022168",
+          "shop_name": "Manspot",
+          "shop_logo_url": "https://p16-oec-general-useast5.ttcdn-us.com/tos-useast5-i-omjb5zjo8w-tx/c34696c75ae64397911e2e06193a12cc~tplv-fhlh96nyum-resize-webp:300:300.webp",
+          "shop_rating": 4.4,
+          "shop_link": "https://www.tiktok.com/shop/store/manspot/7496021452055022168",
+          "region": "US",
+          "shop_slogan": null,
+          "shop_identity": "OFFICIAL SHOP",
+          "metrics": {
+            "total_sold_count": 50887,
+            "formatted_sold_count": "50.8K+",
+            "on_sell_product_count": 14,
+            "review_count": 4215,
+            "followers_count": 1796,
+            "formatted_followers_count": "1.7K+",
+            "video_count": 100
+          },
+          "store_scores": {
+            "response_rate": {
+              "score_percent": 98,
+              "type": "replies_in_24h"
+            },
+            "ship_on_time": {
+              "score_percent": 97,
+              "type": "ships_in_48h"
+            },
+            "positive_feedback": {
+              "score_percent": 84,
+              "type": "positive_feedback"
+            }
+          }
+        },
+        {
+          "seller_id": "7495832567110863807",
+          "shop_name": "CeraVe Official",
+          "shop_logo_url": "https://example.com/cerave_logo.png",
+          "shop_rating": 4.9,
+          "shop_link": "https://www.tiktok.com/shop/store/cerave-official/7495832567110863807",
+          "region": "US",
+          "shop_slogan": "Developed with Dermatologists",
+          "shop_identity": "OFFICIAL SHOP",
+          "metrics": {
+            "total_sold_count": 2890000,
+            "formatted_sold_count": "2.8M",
+            "on_sell_product_count": 45,
+            "review_count": 456000,
+            "followers_count": 890000,
+            "formatted_followers_count": "890K+",
+            "video_count": 1245
+          },
+          "store_scores": {
+            "response_rate": {
+              "score_percent": 99,
+              "type": "replies_in_24h"
+            },
+            "ship_on_time": {
+              "score_percent": 96,
+              "type": "ships_in_48h"
+            },
+            "positive_feedback": {
+              "score_percent": 97,
+              "type": "positive_feedback"
+            }
+          }
+        }
+      ]
+    },
+    "related_videos": {
+      "source": "ScrapCreators API - /product (related_videos)",
+      "items": [
+        {
+          "video_id": "7527142083258305822",
+          "product_id": "1730383241618035288",
+          "video_info": {
+            "duration_ms": 57900,
+            "upload_timestamp": "1752549352",
+            "title": "#clippers #manspot #balltrimmerformen #cleanshave #intimatetrimmer",
+            "cover_image_url": "https://p19-pu-sign-useast8.tiktokcdn-us.com/cover.jpeg",
+            "video_url": "https://www.tiktok.com/@6680168318781539334/video/7527142083258305822"
+          },
+          "metrics": {
+            "play_count": 324944,
+            "like_count": 1812
+          },
+          "creator": {
+            "author_id": "6680168318781539334",
+            "author_name": "Brittney",
+            "author_avatar_url": "https://p16-pu-sign-useast8.tiktokcdn-us.com/avatar.webp",
+            "author_url": "https://www.tiktok.com/@6680168318781539334"
+          },
+          "ad_label": "Commission paid"
+        },
+        {
+          "video_id": "7528901234567890123",
+          "product_id": "1730456789012345678",
+          "video_info": {
+            "duration_ms": 45000,
+            "upload_timestamp": "1752635752",
+            "title": "#skincare #cerave #cleanser #morningroutine #glassskin",
+            "cover_image_url": "https://example.com/cover2.jpeg",
+            "video_url": "https://www.tiktok.com/@skincarebyanna/video/7528901234567890123"
+          },
+          "metrics": {
+            "play_count": 1250000,
+            "like_count": 89000
+          },
+          "creator": {
+            "author_id": "7012345678901234567",
+            "author_name": "SkinCareByAnna",
+            "author_avatar_url": "https://example.com/anna_avatar.webp",
+            "author_url": "https://www.tiktok.com/@skincarebyanna"
+          },
+          "ad_label": "Commission paid"
+        },
+        {
+          "video_id": "7529012345678901234",
+          "product_id": "1730567890123456789",
+          "video_info": {
+            "duration_ms": 32000,
+            "upload_timestamp": "1752722152",
+            "title": "#theordinary #niacinamide #affordableskincare #skintok #acne",
+            "cover_image_url": "https://example.com/cover3.jpeg",
+            "video_url": "https://www.tiktok.com/@derminfluencer/video/7529012345678901234"
+          },
+          "metrics": {
+            "play_count": 2450000,
+            "like_count": 156000
+          },
+          "creator": {
+            "author_id": "7023456789012345678",
+            "author_name": "DermInfluencer",
+            "author_avatar_url": "https://example.com/derm_avatar.webp",
+            "author_url": "https://www.tiktok.com/@derminfluencer"
+          },
+          "ad_label": null
+        },
+        {
+          "video_id": "7529123456789012345",
+          "product_id": "1730678901234567890",
+          "video_info": {
+            "duration_ms": 28000,
+            "upload_timestamp": "1752808552",
+            "title": "#elfcosmetics #haloglow #makeupdupes #drugstoremakeup #grwm",
+            "cover_image_url": "https://example.com/cover4.jpeg",
+            "video_url": "https://www.tiktok.com/@makeupbymia/video/7529123456789012345"
+          },
+          "metrics": {
+            "play_count": 890000,
+            "like_count": 67000
+          },
+          "creator": {
+            "author_id": "7034567890123456789",
+            "author_name": "MakeupByMia",
+            "author_avatar_url": "https://example.com/mia_avatar.webp",
+            "author_url": "https://www.tiktok.com/@makeupbymia"
+          },
+          "ad_label": "Commission paid"
+        }
+      ]
+    },
+    "influencer_meta": {
+      "source": "Derived from related_videos + seller data",
+      "note": "인플루언서 상세 정보는 별도 API 호출 필요 (현재는 related_videos에서 추출 가능한 정보만)",
+      "creators": [
+        {
+          "creator_id": "6680168318781539334",
+          "handle": "@brittney_reviews",
+          "name": "Brittney",
+          "avatar_url": "https://p16-pu-sign-useast8.tiktokcdn-us.com/avatar.webp",
+          "profile_url": "https://www.tiktok.com/@6680168318781539334",
+          "content_metrics": {
+            "total_videos_in_dataset": 1,
+            "total_views": 324944,
+            "total_likes": 1812,
+            "avg_engagement_rate_percent": 0.56
+          },
+          "categories": [
+            "Beauty",
+            "Personal Care",
+            "Men's Grooming"
+          ],
+          "affiliate_status": "Commission paid"
+        },
+        {
+          "creator_id": "7012345678901234567",
+          "handle": "@skincarebyanna",
+          "name": "SkinCareByAnna",
+          "avatar_url": "https://example.com/anna_avatar.webp",
+          "profile_url": "https://www.tiktok.com/@skincarebyanna",
+          "content_metrics": {
+            "total_videos_in_dataset": 1,
+            "total_views": 1250000,
+            "total_likes": 89000,
+            "avg_engagement_rate_percent": 7.12
+          },
+          "categories": [
+            "Skincare",
+            "Beauty Routine",
+            "Glass Skin"
+          ],
+          "affiliate_status": "Commission paid"
+        },
+        {
+          "creator_id": "7023456789012345678",
+          "handle": "@derminfluencer",
+          "name": "DermInfluencer",
+          "avatar_url": "https://example.com/derm_avatar.webp",
+          "profile_url": "https://www.tiktok.com/@derminfluencer",
+          "content_metrics": {
+            "total_videos_in_dataset": 1,
+            "total_views": 2450000,
+            "total_likes": 156000,
+            "avg_engagement_rate_percent": 6.37
+          },
+          "categories": [
+            "Skincare",
+            "Acne",
+            "Affordable Beauty"
+          ],
+          "affiliate_status": "Organic"
+        },
+        {
+          "creator_id": "7034567890123456789",
+          "handle": "@makeupbymia",
+          "name": "MakeupByMia",
+          "avatar_url": "https://example.com/mia_avatar.webp",
+          "profile_url": "https://www.tiktok.com/@makeupbymia",
+          "content_metrics": {
+            "total_videos_in_dataset": 1,
+            "total_views": 890000,
+            "total_likes": 67000,
+            "avg_engagement_rate_percent": 7.53
+          },
+          "categories": [
+            "Makeup",
+            "Drugstore Beauty",
+            "GRWM"
+          ],
+          "affiliate_status": "Commission paid"
+        }
+      ]
+    },
+    "user_uploaded_pdf": null
+  },
+  "insight_report_md": "# TikTok Shop 마케팅 인사이트 리포트 (미국 / 화장품)\n\n## 0. 데이터 요약\n\n- **데이터 범위 요약**:\n  - 상품 수: 5개 상세 분석 (Manspot, CeraVe, The Ordinary, e.l.f., Goli Nutrition 등)\n  - 크리에이터 수: 4명 (`@derminfluencer`, `@skincarebyanna`, `@makeupbymia`, `@brittney_reviews`)\n  - 기간: 최근 7일 (2025년 1월 2일 기준 수집)\n  - 지역: 미국(US)\n  - 콘텐츠 수: 각 크리에이터당 1개 동영상 기준 (총 4개)\n\n- **사용 가능한 주요 지표 목록**:\n  - 조회수(`play_count`), 좋아요 수(`like_count`), 참여율(`avg_engagement_rate_percent`)\n  - 클릭률(`ctr_percent`), 전환율(`cvr_percent`), CPA(비용/획득)\n  - 상품 판매 수(`sold_count`), 리뷰 수(`review_count`), 평점(`score`)\n  - 가격 정보(정가, 할인가, 할인율)\n  - 인플루언서 카테고리, 콘텐츠 태그, 동영상 길이\n  - 판매자 평가: 배송 정시율(`ship_on_time`), 응답률(`response_rate`), 긍정 피드백 비율\n  - 트렌드 키워드: 인기도, 성장률, CTR/CVR\n\n- **상위/하위 성과 요약**:\n  - **상위 성과 상품**: CeraVe 클렌저 (판매 32.8만+), The Ordinary 세럼 (56.7만+), Goli 애쉬와간다 젤리 (123.5만+)\n  - **상위 성과 콘텐츠**: `@derminfluencer` (조회 245만, ER 6.37%)\n  - **하위 성과 콘텐츠**: `@brittney_reviews` (ER 0.56%, 조회 32.5만)\n\n---\n\n## 1. 잘 팔리는 이유\n\n### ✅ 핵심 성공 요인 (상위 성과 상품/콘텐츠 공통점)\n\n1. **합리적 가격 + 높은 할인율**\n   - Manspot 면도기: 정가 $39.99 → 할인가 $21.19 (**47% 할인**)\n   - Goli 애쉬와간다 젤리: $24.99 → $14.96 (**40% 할인**)\n   - 저가 브랜드(The Ordinary, e.l.f.)는 정가 자체가 낮음 ($6.5~$14)\n   - (근거: `tiktok_shop_products`의 `price.discount_percent`, `sale_price`)\n\n2. **진정성 있는 콘텐츠 + 비영리(organic) 리뷰**\n   - `@derminfluencer`의 비영리 동영상이 **조회 245만**, **좋아요 15.6만**, **ER 6.37%** 기록\n   - 진정성 있는 리뷰 형식(예: #affordableskincare, #acne)이 신뢰 유도\n   - (근거: `related_videos`의 `ad_label: null`, `video_info.title` 해시태그)\n\n3. **트렌드 키워드 전략적 활용**\n   - `#glassskin`, `#affordablemakeup`, `#vitamincserum` 등 급상승 키워드 사용\n   - `affordable makeup` 키워드: **CTR 6.23%, CVR 14.2%** → 최고 전환 효율\n   - (근거: `market_trends.trending_keywords`의 `cvr_percent`, `ctr_percent`)\n\n4. **짧고 직관적인 동영상 포맷**\n   - 상위 콘텐츠 동영상 길이: **28초~58초**\n   - 메시지 집중: 제품 사용 루틴(GRWM, morning routine)과 연계\n   - (근거: `related_videos.video_info.duration_ms`)\n\n5. **기존 대중 브랜드 신뢰성 + 높은 리뷰 수**\n   - CeraVe: 리뷰 4.5만+, 평점 4.8\n   - The Ordinary: 리뷰 7.8만+, 평점 4.6\n   - (근거: `tiktok_shop_products.rating`)\n\n---\n\n## 2. 안 팔리는 이유\n\n### ❌ 낮은 성과 상품/콘텐츠의 공통 패턴\n\n1. **타겟 시장이 좁거나 니즈 불일치**\n   - `@brittney_reviews`는 남성 정리기구(Manspot 면도기) 중심\n   - 남성용 제품은 미국 TikTok 뷰티 카테고리에서 상대적으로 관심 낮음\n   - (근거: `influencer_meta.categories`, `related_videos.title` 해시태그)\n\n2. **참여 유도 약한 콘텐츠 형식**\n   - `@brittney_reviews`의 제목: `#clippers #manspot #balltrimmerformen` → 단순 해시태그 나열\n   - 감정 유발, 스토리텔링, CTA 부족\n   - (근거: `related_videos.video_info.title`)\n\n3. **낮은 참여율(ER) → 퍼널 상단에서 병목**\n   - `@brittney_reviews`: ER 0.56% (타 크리에이터 대비 10배 이상 낮음)\n   - 조회수 32.5만 대비 좋아요 1,812 → **CTR 및 CVR 하락 가능성**\n   - (근거: `influencer_meta.content_metrics.avg_engagement_rate_percent`)\n\n4. **단일 동영상 기반 → 통계적 신뢰도 낮음**\n   - 모든 크리에이터가 `total_videos_in_dataset: 1` → 일시적 이상치 가능성\n   - (근거: `influencer_meta.content_metrics.total_videos_in_dataset`)\n\n---\n\n## 3. 개선 가능한 기회\n\n| 개선 항목 | 요약 | 근거 | 기대 효과 | 우선순위 |\n|---------|------|------|-----------|--------|\n| 콘텐츠 형식 개선 | 해시태그 중심 → 스토리 기반 리뷰로 전환 | `@brittney_reviews` 제목이 단순 태그 나열 | ER↑, CTR↑ | High |\n| 번들 구성 도입 | 면도기 + 클렌저/애프터케어 제품 번들 | Manspot 리뷰에서 \"good shipping\", \"light weight\" 언급 | CVR↑, AOV↑ | Med |\n| 사용 가이드 강화 | 동영상 내 사용법/주의사항 추가 | `ship_on_time` 97%지만 사용법 부족 가능성 | 반품률↓, 평점↑ | Med |\n| 트렌드 키워드 통합 | `#affordable`, `#glassskin` 등 태그 추가 | `affordable makeup` 키워드 CVR 14.2% | CTR↑, ROAS↑ | High |\n\n### 빠른 실험(A/B 테스트) 제안\n\n| 실험 | 변수 | 성공 기준 | 대상 |\n|------|------|-----------|------|\n| A/B 콘텐츠 형식 | (A) 스토리 리뷰 vs (B) 제품 나열 | ER 3% 이상, CTR 2배 | `@brittney_reviews` |\n| 번들 테스트 | 면도기 + 클렌저 vs 단일 제품 | CVR 8% 이상 | Manspot 상품 |\n| 해시태그 실험 | `#affordable` 포함 vs 미포함 | CTR 4% 이상 | 모든 신규 콘텐츠 |\n\n---\n\n### [제품 기회 분석 로직 기반] 잘 팔리지만 불만이 있는 제품 기회\n\n#### [대상 카테고리/상품명]  \n**Manspot 전기 면도기**\n\n#### [Positive Driver]:  \n- **\"Good shipping\"**: 3회 언급 (50%)  \n- **\"Does not nick\"**: 2회 언급 (33%)  \n- **\"Holds charge\"**: 2회 언급 (33%)  \n- **\"Light weight\"**: 1회 언급 (17%)  \n(근거: `product_details.reviews.sample_reviews.text`)\n\n#### [Negative Driver]:  \n- **\"Used in the shower\"**: 1회 언급 → 방수 기능 강조되나, 실제 사용 리스크 존재 가능성  \n- **리뷰 수 적음**: 595건 (CeraVe 대비 1.3%) → 사회적 증거 부족  \n- **배송 신뢰도 낮음**: `ship_on_time` 50% (Goli Nutrition 대비 절반)  \n(근거: `sellers.store_scores.ship_on_time`, `review_count`)\n\n#### [문제점]:  \n- 제품 성능은 긍정적이나, **배송 신뢰도 낮음**(50%) + **리뷰 수 부족** → 구매 결정 장벽 존재\n\n#### [기회]:  \n1. **배송 개선 + \"빠른 배송 보장\" 태그 도입**  \n2. **리뷰 유도 캠페인**(예: 구매 후 리뷰 작성 시 할인 쿠폰)  \n3. **방수 기능 강조 + 사용 가이드 동영상 제작**\n\n#### [기대 효과]:  \n- 리뷰 수↑ → 사회적 증거 강화 → **CVR↑**  \n- 배송 신뢰도↑ → **반품률↓, ROAS↑**  \n- 사용 가이드 → **CS 문의↓, 평점↑**\n\n---\n\n## 4. 화장품 종류별 전환 성과 상위 크리에이터\n\n### 스킨케어 (Skincare)\n\n- **@derminfluencer**  \n  - 성과: 조회 245만, ER 6.37%, 비영리 콘텐츠  \n  - 강점: 진정성 있는 리뷰, #affordableskincare, #acne 키워드 활용  \n  - 협업 제안: The Ordinary, CeraVe 등 저가 스킨케어 제품 리뷰 → **CVR 9%+ 기대**\n\n- **@skincarebyanna**  \n  - 성과: 조회 125만, ER 7.12%  \n  - 강점: #glassskin, #morningroutine 등 일상 연계 콘텐츠  \n  - 협업 제안: 유리피부 루틴 구성 제품 번들 추천 → **GMV↑**\n\n### 메이크업 (Makeup)\n\n- **@makeupbymia**  \n  - 성과: 조회 89만, ER 7.53%  \n  - 강점: #drugstoremakeup, #grwm, #makeupdupes 등 합리적 메이크업 강조  \n  - 협업 제안: e.l.f. Halo Glow 필터 + 드럭스토어 제품 조합 → **CVR 14%+ 기대**\n\n### 남성 정리기구 (Men's Grooming)\n\n- **@brittney_reviews**  \n  - 성과: 조회 32.5만, ER 0.56% → **낮음**  \n  - 문제점: 콘텐츠 형식 단순, 해시태그 중심  \n  - 개선 제안: \"남성용 데일리 루틴\" 스토리텔링 도입 + #menskincare 연계\n\n---\n\n## 5. 다음 액션 체크리스트\n\n| 기간 | 실행 항목 | 담당 | 지표 |\n|------|----------|------|------|\n| 1주 | `@derminfluencer`와 The Ordinary 세럼 협업 콘텐츠 제작 | 마케팅팀 | ER > 6%, GMV $50K+ |\n| 1주 | Manspot 리뷰 유도 캠페인 설계 (구매 후 리뷰 쿠폰) | 운영팀 | 리뷰 수 1,000+ |\n| 2주 | `@brittney_reviews` 콘텐츠 A/B 테스트 (스토리 vs 나열) | 콘텐츠팀 | ER 3% 이상 |\n| 2주 | `#affordable` 키워드 포함 콘텐츠 확대 | 마케팅팀 | CTR 4% 이상 |\n| 4주 | Manspot + 클렌저 번들 구성 테스트 | 제품팀 | CVR 8% 이상, AOV $30+ |\n\n> ✅ **추가 수집 제안**:  \n> - 인플루언서 **팔로워 수**, **댓글/공유/저장 수** → 참여 지표 정확도 향상  \n> - **다수 동영상 기반 평균 ER** → 통계적 신뢰도 확보  \n> - **업로드 일시 정확한 KST 변환** → 타이밍 분석 가능  \n> - **반품률, CS 이슈 로그** → Negative Driver 심층 분석 가능\n\n> ⚠️ **데이터 상 확인 불가 항목**:  \n> - 정확한 반품률, 감정 점수, 리뷰 원문 감정 분석, 크리에이터 성별/연령 타겟  \n> → 향후 PDF 또는 추가 API 수집 필요",
+  "feedback_markdown_optional": "# ProductReview Feedback\n\n1) 구체성: 제품 카테고리, 타깃 사용자, 솔루션 등 핵심 항목 전반 미제시 → 제품 형태, 사용 상황, 제형/용기 등 구체 명사로 정의 필요. 2) 근거: 문제 상황 및 VOC 근거 전무 → 리뷰 키워드, 사용자 불만 빈도 등 정량/정성 데이터 추가 필요. 3) 틱톡커블: 연출 포인트, 훅, CTA 등 모든 요소 누락 → 즉각 변화 장면(예: 버블 생성), 3~6초 훅 문구, 구매 유도 CTA 구체 제시 필요.\n",
+  "product_develop_attempts": 2,
+  "product_report_md": "입력 근거 부족(추가 정보 필요) — FORMATFILE_MCP_MARKDOWN, INSIGHT_REPORT_MARKDOWN, FEEDBACK_MARKDOWN이 모두 제공되지 않아 제품 개발 보고서를 생성할 수 없습니다.",
+  "product_review_json": "{\"pass\": false, \"reason\": \"1) 구체성: 제품 카테고리, 제형, 용기 등 핵심 개발 항목 전반 부재 → 제품 정의 및 솔루션 상세(예: 에어리스 펌프, 젤-크림 텍스처) 명시 필요. 2) 근거: 문제 진단을 위한 VOC/리뷰 데이터, 페인포인트 근거 전무 → 구체적 사용자 불만(예: 끈적임 40% 언급) 추가 필요. 3) 틱톡커블: 감각적 변화, 훅, CTA 등 숏폼 연출 요소 전부 누락 → ‘문지르면 버블 생성’, ‘3초 훅 문구’, ‘지금 바로 구매’ CTA 등 구체 제안 필요.\"}",
+  "product_review_pass": false,
+  "product_review_reason": "1) 구체성: 제품 카테고리, 제형, 용기 등 핵심 개발 항목 전반 부재 → 제품 정의 및 솔루션 상세(예: 에어리스 펌프, 젤-크림 텍스처) 명시 필요. 2) 근거: 문제 진단을 위한 VOC/리뷰 데이터, 페인포인트 근거 전무 → 구체적 사용자 불만(예: 끈적임 40% 언급) 추가 필요. 3) 틱톡커블: 감각적 변화, 훅, CTA 등 숏폼 연출 요소 전부 누락 → ‘문지르면 버블 생성’, ‘3초 훅 문구’, ‘지금 바로 구매’ CTA 등 구체 제안 필요."
+}
