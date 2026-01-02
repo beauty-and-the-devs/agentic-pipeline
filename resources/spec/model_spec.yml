@@ -1,0 +1,11 @@
+text_gen:
+  llm_lib: "openrouter"
+  model_name: "qwen/qwen3-235b-a22b-2507"
+  temperature: 0.2
+  type: "text_generation"
+
+video_gen:
+  llm_lib: "openrouter"
+  model_name: "qwen/qwen3-235b-a22b-2507"
+  temperature: 0.2
+  type: "text_generation"

@@ -1,0 +1,15 @@
+# filepath: /home/ubuntu/agentic-pipeline/.gitignore
+
+# dotenv
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Virtual envs
+.venv/
+
+# OS
+.DS_Store
