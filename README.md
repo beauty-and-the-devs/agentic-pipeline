@@ -11,7 +11,8 @@ AI 에이전트를 구성하고 실행하기 위한 파이프라인을 관리하
     - 세 개의 process들이 폴더로 구분되어 있고, 해당하는 프로세스의 각 Agent들의 task가 정의되어 있습니다.
 
 ## logs
-- [2026.01.02. Fri] - yonghwan.lee: AI Agent의 resources/prompt 정의
+- [2026.01.02. Fri] - yonghwan.lee: AI Agent의 resources/prompt 각 prompt 정의
+- [2026.01.02. Fri] - yonghwan.lee: AI Agent의 resources/prompt default files 생성
 
 ## VERSION
 - 버전 정보는 VERSION 파일에 정의되어 있습니다.
