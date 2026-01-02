@@ -21,6 +21,8 @@ AI 에이전트를 구성하고 실행하기 위한 파이프라인을 관리하
 ## 폴더 구조
 
 - `resources/`
+  - `test/`
+    - `input_data.json`: 테스트용 더미 입력 데이터(수집 데이터)
   - `prompt/`
     - 각 agent의 Prompt(프롬프트)들이 저장되어 있습니다.
     - 실행 시 필요한 prompt를 이 폴더에서 불러와(agent가 참조할 프롬프트를 로드하여) 각 agent의 task(업무/역할)를 정의합니다.
@@ -47,6 +49,7 @@ AI 에이전트를 구성하고 실행하기 위한 파이프라인을 관리하
   - 간단한 호출/연동 테스트가 위치합니다.
 
 ## logs
+- [2026.01.03. Sat] - yonghwan.lee: 전체 파이프라인의 기본 베이스 테스트
 - [2026.01.03. Sat] - yonghwan.lee: 전체 파이프라인의 기본 베이스 정의
 - [2026.01.02. Fri] - yonghwan.lee: AI Agent의 resources/prompt 각 prompt 정의
 - [2026.01.02. Fri] - yonghwan.lee: AI Agent의 resources/prompt default files 생성
