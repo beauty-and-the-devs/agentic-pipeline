@@ -1,4 +1,3 @@
-
 from __future__ import annotations
 
 import os
@@ -43,8 +42,33 @@ def load_prompt_bundle(prompt_path: Path) -> PromptBundle:
     )
 
 
-def load_model_spec(model_spec_path: Path) -> Dict[str, Any]:
+def load_model_spec(model_spec_path: Path, *, kind: str = "text_gen") -> Dict[str, Any]:
+    """Load model spec YAML.
+
+    Supports both legacy flat format:
+      llm_lib/model_name/temperature/type
+
+    and new format:
+      text_gen: { ... }
+      video_gen: { ... }
+
+    Parameters
+    ----------
+    kind:
+      Which top-level spec to use in the new format. Default: "text_gen".
+    """
+
     spec = load_yaml(model_spec_path)
+
+    # New nested format
+    if "text_gen" in spec or "video_gen" in spec:
+        sub = spec.get(kind)
+        if not isinstance(sub, dict):
+            raise KeyError(
+                f"Missing or invalid '{kind}' section in model spec YAML {model_spec_path}"
+            )
+        spec = sub
+
     required = ["llm_lib", "model_name", "temperature", "type"]
     missing = [k for k in required if k not in spec]
     if missing:

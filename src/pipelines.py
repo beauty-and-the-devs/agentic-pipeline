@@ -1,20 +1,28 @@
 from __future__ import annotations
 
+import json
 from typing import Any, Dict, TypedDict
 
 from langgraph.graph import StateGraph
 
 from src.agent.DataExtractAgent import DataExtractAgent
 from src.agent.InsightGeneratorAgent import InsightGeneratorAgent
+from src.agent.MarketingVideoGeneratorAgent import MarketingVideoGeneratorAgent
 from src.agent.PlotGeneratorAgent import PlotGeneratorAgent
 from src.agent.ProductDevelopAgent import ProductDevelopAgent
+from src.agent.ProductReviewAgent import ProductReviewAgent
 
 
 class PipelineState(TypedDict, total=False):
     input_json: Dict[str, Any]
     insight_report_md: str
     product_report_md: str
+    product_review_json: str
+    product_review_pass: bool
+    product_review_reason: str
+    product_develop_attempts: int
     plot_report_md: str
+    marketing_videos_json: str
 
 
 def build_insight_process_graph() -> "StateGraph[PipelineState]":
@@ -63,12 +71,96 @@ def run_product_develop(state: PipelineState) -> PipelineState:
     return {**state, "product_report_md": result}
 
 
-def run_marketing_contents(state: PipelineState) -> PipelineState:
-    agent = PlotGeneratorAgent()
+def run_product_review(state: PipelineState) -> PipelineState:
+    agent = ProductReviewAgent()
     result = agent.run(
+        {
+            "product_develop_report_markdown": state.get("product_report_md", ""),
+        }
+    )
+    return {**state, "product_review_json": result}
+
+
+def run_marketing_contents(state: PipelineState) -> PipelineState:
+    # Gate: do not proceed unless product review has passed.
+    if state.get("product_review_pass") is not True:
+        raise RuntimeError(
+            "Product review did not pass. Fix product_report_md via ProductDevelopAgent feedback loop before marketing."
+        )
+
+    plot_agent = PlotGeneratorAgent()
+    plot_result = plot_agent.run(
         {
             "product_report_markdown": state.get("product_report_md", ""),
             "insight_report_markdown": state.get("insight_report_md", ""),
         }
     )
-    return {**state, "plot_report_md": result}
+    state2: PipelineState = {**state, "plot_report_md": plot_result}
+
+    video_agent = MarketingVideoGeneratorAgent()
+    videos_result = video_agent.run(
+        {
+            "FlagRegen": False,
+            "PlotText": state2.get("plot_report_md", ""),
+        }
+    )
+    return {**state2, "marketing_videos_json": videos_result}
+
+
+def _parse_review_result(review_json_text: str) -> Dict[str, Any]:
+    """Best-effort parse for ProductReviewAgent JSON output."""
+    try:
+        data = json.loads(review_json_text)
+        if isinstance(data, dict):
+            return data
+    except Exception:
+        pass
+    return {"pass": False, "reason": "Invalid review JSON"}
+
+
+def run_product_develop_with_review(
+    state: PipelineState,
+    *,
+    max_attempts: int = 2,
+) -> PipelineState:
+    """Run ProductDevelopAgent and gate it with ProductReviewAgent.
+
+    If review fails, feed the review reason back into ProductDevelopAgent and retry.
+    """
+
+    current_state: PipelineState = dict(state)
+    feedback = current_state.get("feedback_markdown_optional", "")
+
+    attempts = 0
+    last_reason = ""
+
+    for _ in range(max_attempts):
+        attempts += 1
+        current_state = run_product_develop(
+            {**current_state, "feedback_markdown_optional": feedback, "product_develop_attempts": attempts}
+        )
+        current_state = run_product_review(current_state)
+
+        review = _parse_review_result(current_state.get("product_review_json", ""))
+        passed = bool(review.get("pass"))
+        last_reason = str(review.get("reason", ""))
+
+        current_state = {
+            **current_state,
+            "product_review_pass": passed,
+            "product_review_reason": last_reason,
+        }
+
+        if passed:
+            return current_state
+
+        # Feed back the reviewer reason into ProductDevelopAgent (as markdown)
+        feedback = f"# ProductReview Feedback\n\n{last_reason}\n"
+
+    # Final state with failure info retained
+    return {
+        **current_state,
+        "product_review_pass": False,
+        "product_review_reason": last_reason,
+        "product_develop_attempts": attempts,
+    }

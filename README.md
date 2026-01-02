@@ -25,9 +25,26 @@ AI 에이전트를 구성하고 실행하기 위한 파이프라인을 관리하
     - 각 agent의 Prompt(프롬프트)들이 저장되어 있습니다.
     - 실행 시 필요한 prompt를 이 폴더에서 불러와(agent가 참조할 프롬프트를 로드하여) 각 agent의 task(업무/역할)를 정의합니다.
     - 세 개의 process들이 폴더로 구분되어 있고, 해당하는 프로세스의 각 Agent들의 task가 정의되어 있습니다.
+    - `insight_process/`: 인사이트 도출 단계(DataExtractAgent → InsightGeneratorAgent)
+    - `product_develop/`: 제품 기획/개발 보고서 단계(ProductDevelopAgent → ProductReviewAgent)
+    - `marketing_contents/`: 마케팅 콘텐츠 단계(PlotGeneratorAgent → MarketingVideoGeneratorAgent)
+
+  - `spec/`
+    - 모델 스펙(LLM 설정) YAML이 저장됩니다.
+    - `model_spec.yml`: `text_gen`, `video_gen`로 구분하여 모델/temperature 등의 설정을 관리합니다.
 
 - `src/`
-  - 
+  - 파이프라인 실행 코드 및 agent 구현이 위치합니다.
+  - `app.py`: 전체 파이프라인을 순차 실행하는 엔트리 포인트(샘플 입력 포함)
+  - `pipelines.py`: 프로세스별 실행 함수와 상태(state) 정의
+    - insight_process, product_develop(+review loop), marketing_contents 단계 함수 포함
+  - `pipelines_graph.py`: LangGraph(StateGraph) 기반으로 동일 순서의 앱 그래프 구성
+  - `agent/`: 개별 agent 구현
+    - `_base.py`: prompt/model spec 로딩 및 LLM(OpenRouter) 생성 공통 유틸
+    - `*Agent.py`: 각 prompt YAML(=`resources/prompt/**`)을 로드해 실행하는 agent 클래스
+
+- `tests/`
+  - 간단한 호출/연동 테스트가 위치합니다.
 
 ## logs
 - [2026.01.03. Sat] - yonghwan.lee: 전체 파이프라인의 기본 베이스 정의

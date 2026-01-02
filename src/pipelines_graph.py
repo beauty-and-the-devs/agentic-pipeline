@@ -1,11 +1,14 @@
-
 from __future__ import annotations
 
 from typing import Any, Dict, TypedDict
 
 from langgraph.graph import END, StateGraph
 
-from src.pipelines import run_insight_process, run_marketing_contents, run_product_develop
+from src.pipelines import (
+    run_insight_process,
+    run_marketing_contents,
+    run_product_develop_with_review,
+)
 
 
 class AppState(TypedDict, total=False):
@@ -18,7 +21,7 @@ def build_app_graph() -> "StateGraph[AppState]":
         return run_insight_process(state.get("input_json", {}))
 
     def product_node(state: AppState) -> AppState:
-        return run_product_develop(state)
+        return run_product_develop_with_review(state, max_attempts=2)
 
     def marketing_node(state: AppState) -> AppState:
         return run_marketing_contents(state)

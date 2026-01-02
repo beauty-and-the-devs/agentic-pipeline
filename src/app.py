@@ -6,7 +6,11 @@ from typing import Any, Dict
 
 from dotenv import load_dotenv
 
-from src.pipelines import run_insight_process, run_marketing_contents, run_product_develop
+from src.pipelines import (
+    run_insight_process,
+    run_marketing_contents,
+    run_product_develop_with_review,
+)
 from src.pipelines_graph import build_app_graph
 
 
@@ -24,10 +28,12 @@ def main() -> None:
         "note": "replace this with your collected MCP/Agent/PDF extracted JSON",
     }
 
-    # 프로세스 순서: insight_process -> product_develop -> marketing_contents
-    # 1) 기존 방식(순차 실행)
+    # 프로세스 순서:
+    # insight_process(DataExtractAgent -> InsightGeneratorAgent)
+    # -> product_develop(ProductDevelopAgent -> ProductReviewAgent) [fail 시 feedback으로 재시도]
+    # -> marketing_contents(PlotGeneratorAgent -> MarketingVideoGeneratorAgent)
     state = run_insight_process(input_json)
-    state = run_product_develop(state)
+    state = run_product_develop_with_review(state, max_attempts=2)
     state = run_marketing_contents(state)
 
     # 2) LangGraph 방식(동일 순서 그래프)
