@@ -4,11 +4,29 @@ AI 에이전트를 구성하고 실행하기 위한 파이프라인을 관리하
 
 ## run
 ```bash
+# 1) conda 환경 생성 (Python 3.12)
+conda create -n amore-agent python=3.12 -y
 conda activate amore-agent
-cd ./agentic-pipeline
-python3 -m src.app
 
+# 2) 프로젝트 이동 및 의존성 설치
+cd ./agentic-pipeline
+pip install -r requirements.txt
+
+# 3) OpenRouter API 키 설정(.env)
+# - 프로젝트 루트(agentic-pipeline/)에 .env 파일 생성 후 API 키 값 입력
+
+# 4) 실행
+python3 -m src.app
 ```
+
+## OpenRouter API Key 설정
+- OpenRouter: https://openrouter.ai/
+- 발급 절차(요약)
+  1) OpenRouter 로그인
+  2) `API Keys`에서 새 키 생성
+  3) 프로젝트 루트(`agentic-pipeline/`)에 `.env` 파일을 만들고 아래 내용을 추가
+     - `OPENROUTER_API_KEY=...`
+- `.env`는 로컬 실행용 비밀정보이므로 git에 커밋하지 않는 것을 권장합니다.
 
 ## environments
 - Ubuntu 24.02 LTS
